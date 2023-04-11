@@ -1,7 +1,10 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
+const dotenv = require('dotenv')
 
-require("dotenv").config()
+dotenv.config()
 
-const connection = mongoose.connect(process.env.DB)
+const connection = mongoose.connect(process.env.database, {
+  useNewUrlParser: true,
+})
 
 module.exports = {connection};
